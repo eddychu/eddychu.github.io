@@ -21,11 +21,11 @@
 title: Connect the Dots
 email: hey.yadong@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A personal blog by Eddy.Chu.
+  A personal blog by Eddy.Chu on all things interesting.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "eddychu.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: @eddywriting
-github_username: @eddychu
+twitter_username: eddywriting
+github_username: eddychu
 
 # Build settings
 theme: minima
