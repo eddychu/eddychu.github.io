@@ -1,15 +1,17 @@
 {% extends "layout-default.njk" %}
 
 {% block content %}
-<ul>
+
 {% for post in posts %}
-    <li>
-     <h3>
+    <h2 class="post-title">
         <a href={{"./" + post.slug + ".html"}}>
-        {{ post.title }}</a>
-     </h3>
-    </li>
+            {{ post.title }}
+        </a>
+    </h2>
+    <div class="post-meta">
+    <span class="post-meta-date">{{ post.created }}</span>
+    </div>
 {% endfor %}
-</ul>
+
 {% endblock %} 
 
