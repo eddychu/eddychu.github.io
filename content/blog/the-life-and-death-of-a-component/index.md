@@ -1,13 +1,13 @@
 ---
-title: The life and death of a React Component
+title: The life and death of a React Class Component
 date: 2020-10-29T05:58:11.637Z
 ---
 
-If you were confused by React's life cycle method, I hope this article will help you understand it better.
+# Class Component lifecycle method
 
-there are three phases in the whole lifecyle of a react component, namely mounting, updating and unmounting.
+If you were confused by React (Class) Component's life cycle methods, I hope this article will help you understand it better.
 
-Try it on [codesandbox](https://codesandbox.io/s/component-lifecycle-j0jtn)
+There are three phases in the whole lifecyle of a react component, namely mounting, updating and unmounting. In a class component, during each phase there are a few functions will be called by React runtime one by one.
 
 ## Mounting : The birth of a React component
 
