@@ -1,5 +1,5 @@
 ---
-title: The life and death of a react component
+title: The life and death of a React Component
 date: 2020-10-29T05:58:11.637Z
 ---
 
