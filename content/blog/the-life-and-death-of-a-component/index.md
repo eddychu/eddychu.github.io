@@ -9,6 +9,8 @@ If you were confused by React (Class) Component's life cycle methods, I hope thi
 
 There are three phases in the whole lifecyle of a react component, namely mounting, updating and unmounting. In a class component, during each phase there are a few functions will be called by React runtime one by one.
 
+try it on [codesandbox](https://codesandbox.io/s/component-lifecycle-j0jtn)
+
 ## Mounting : The birth of a React component
 
 ```javascript
