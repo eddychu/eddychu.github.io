@@ -7,13 +7,13 @@ When web browser loads a webpage, a document is created, parsed, until it is ful
 
 
 ## Step 1: Loading the document
-Before the web browser starts parsing a web page, it will first creates a document object. ***the browser set document.readyState property to be loading***. As the parser scan through the webpage, dom element objects will be added to the document object int the order that the parser encounters theme. 
+Before the web browser starts parsing a web page, it will first creates a document object. ***the browser set document.readyState property to be loading***. As the parser scan through the webpage, dom element objects will be added to the document object in the order that the parser encounters them. 
 
-When the HTML parser encounters a \<script\> tag. There are a few scenarios will happen during this phase:
+When the HTML parser encounters a \<script\> tag. There are a few scenarios might happen during this phase:
 
 
 ### 1. inline script
-If it is an inline \<script\> tag or \<script\ src=""> tag without async, defer, or type="module" attributes, the script element will be added to document just like any other dom element. It will also be exectued synchronously in the same order the parser encounters them. The script will have access to its own \<script\> tag and document content that comes before itself.
+If it is an inline \<script\> tag or \<script\ src=""> tag without async, defer, or type="module" attributes, the script element will be added to document just like any other dom elements. It will also be exectued synchronously in the same order the parser encounters them. The script will have access to its own \<script\> tag and document content that comes before itself.
 
 ### 2. async script
 When the parser encounters a \<script\> that has async attribute set, it begin downloading the script text and continues parsing the rest of document. After the script content is downloaded, it will be executed. Once it is downloaded they behave pretty much the same as inline \<script\> tag.
