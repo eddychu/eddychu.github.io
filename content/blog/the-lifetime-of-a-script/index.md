@@ -44,4 +44,4 @@ From this point on, event handlers are invoked asynchronously in response to
 user input events, network events, timer expirations, and so on.
 
 
-Reference: [Javascript: The Definitive Guide, 7th Edition](https://www.amazon.com/JavaScript-Definitive-Most-Used-Programming-Language/dp/1491952024/ref=pd_lpo_14_t_0/147-6956387-2659531?_encoding=UTF8&pd_rd_i=1491952024&pd_rd_r=ba515d71-5770-45a4-95cb-debc06f12656&pd_rd_w=XdFMf&pd_rd_wg=yZNnf&pf_rd_p=7b36d496-f366-4631-94d3-61b87b52511b&pf_rd_r=1RMRR4BBTQVBXHWKGHXF&psc=1&refRID=1RMRR4BBTQVBXHWKGHXF)
+Reference: Javascript: The Definitive Guide, 7th Edition
