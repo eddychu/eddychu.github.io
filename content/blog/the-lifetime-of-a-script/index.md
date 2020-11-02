@@ -13,7 +13,7 @@ When the HTML parser encounters a \<script\> tag. There are a few scenarios migh
 
 
 ### 1. inline script
-If it is an inline \<script\> tag or \<script\ src=""> tag without async, defer, or type="module" attributes, the script element will be added to document just like any other dom elements. It will also be exectued synchronously in the same order the parser encounters them. The script will have access to its own \<script\> tag and document content that comes before itself.
+If it is an inline \<script\> tag or \<script\ src=""> tag without async, defer, or type="module" attributes, the script element will be added to document just like any other dom elements. It will also be exectued synchronously in the same order the parser encounters them. The script will have access to its own \<script\> tag and document content that comes before itself. Before the script is fully loaded and excuted, the Html parser cannot proceed the dom construction. Because the script can call document.write() function which would totally change the whole document structure, which renders the dom parser work totally pointless.
 
 ### 2. async script
 When the parser encounters a \<script\> that has async attribute set, it begin downloading the script text and continues parsing the rest of document. After the script content is downloaded, it will be executed. Once it is downloaded they behave pretty much the same as inline \<script\> tag.
