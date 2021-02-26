@@ -1,5 +1,5 @@
 ---
-title: Mental Models to start a new react project
+title: A mental model for a new React project
 date: Fri, 26 Feb 2021 12:52:38 GMT
 ---
 
