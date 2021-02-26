@@ -1,0 +1,78 @@
+<!DOCTYPE html><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/a11y-light.css"><title>Connecting Dots | Blog By Eddy Chu</title><body> <h2><a href="/">Connecting Dots</a></h2><hr><h1>The life and death of a React Class Component</h1><p>If you were confused by React (Class) Component&#39;s life cycle methods, I hope this article will help you understand it better.</p>
+<p>There are three phases in the whole lifecyle of a react component, namely mounting, updating and unmounting. In a class component, during each phase there are a few functions will be called by React runtime one by one.</p>
+<p>try it on <a href="https://codesandbox.io/s/component-lifecycle-j0jtn">codesandbox</a></p>
+<h2 id="mounting--the-birth-of-a-react-component">Mounting : The birth of a React component</h2>
+<pre><code class="language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Message</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">props</span>)</span> {
+    <span class="hljs-built_in">super</span>(props);
+    <span class="hljs-built_in">this</span>.state = { <span class="hljs-attr">message</span>: <span class="hljs-string">&quot;hello world&quot;</span> };
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;1: Message Constructor&quot;</span>);
+  }
+
+  <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-title">getDerivedStateFromProps</span>(<span class="hljs-params">props, state</span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;2: getDerivedStateFromProps&quot;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;3: render&quot;</span>);
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;message&quot;</span>&gt;</span>{this.state.message}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">componentDidMount</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;4: componentDidMount&quot;</span>);
+    <span class="hljs-comment">// console.log(document.getElementById(&quot;message&quot;))</span>
+  }
+}
+</code></pre>
+<p>when react start to render our Message component, the constructor is the first method to be called. Then a static function getDerivedStateFromProps is called to give us a chance to change the state based on initial props. after the render function, the dom element is finally added to the dom, then react calls componentDidMount() function, after this step the dom element is finally accessible.</p>
+<h2 id="updating-a-change-of-state">Updating: A change of state</h2>
+<pre><code class="language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Message</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-function"><span class="hljs-title">handleClick</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.setState({ <span class="hljs-attr">message</span>: <span class="hljs-string">&quot;goodbye!&quot;</span> });
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;state changed, we need update now !!!!&quot;</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-title">shouldComponentUpdate</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;4: shouldComponentUpdate&quot;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;5: render&quot;</span>);
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.handleClick}</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;message&quot;</span>&gt;</span>
+        {this.state.message}
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    );
+  }
+
+  <span class="hljs-function"><span class="hljs-title">componentDidUpdate</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;6: componentDidUpdate&quot;</span>);
+  }
+}
+</code></pre>
+<p>After we click the component, handleClick function changes the message state. shouldComponentUpdate is called the next step. If this function returns false, nothing would be updated. If it returns true, render function will be called with the updated state.</p>
+<h2 id="unmounting-time-to-say-goodbye">Unmounting: Time to say goodbye</h2>
+<pre><code class="language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Message</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">componentWillUnmount</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;7: unmount&quot;</span>);
+  }
+}
+
+<span class="hljs-keyword">const</span> App = <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">const</span> [show, setShow] = useState(<span class="hljs-literal">false</span>);
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      {show &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">Message</span> /&gt;</span>}
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> setShow((show) =&gt; !show)}&gt;toggle Message<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+};
+
+render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;root&quot;</span>));
+</code></pre>
+<p>when show is toggled off, the last life cycle method componentWillUnmount will be called. <Message /> component then will be removed from the DOM tree.</p>
+</body></head>

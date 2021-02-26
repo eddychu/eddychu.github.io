@@ -1,30 +1,21 @@
 {
-  "name": "simple-blog",
+  "name": "journal",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export -o docs"
+    "build": "node src/index.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^14.14.31",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.1",
+    "faker": "^5.4.0",
     "front-matter": "^4.0.2",
-    "gray-matter": "^4.0.2",
+    "fs-extra": "^9.1.0",
     "highlight.js": "^10.6.0",
     "marked": "^2.0.0",
     "next": "^10.0.7",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "remark": "^13.0.0",
-    "remark-html": "^13.0.1"
-  },
-  "devDependencies": {
-    "typescript": "^4.2.2"
+    "pug": "^3.0.0"
   }
 }

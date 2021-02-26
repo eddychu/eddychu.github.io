@@ -1,0 +1,89 @@
+<!DOCTYPE html><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/a11y-light.css"><title>Connecting Dots | Blog By Eddy Chu</title><body> <h2><a href="/">Connecting Dots</a></h2><hr><h1>Build the worst React from scratch</h1><p>I&#39;m building a toy react library to learn more about how it works under the hood. All the code here can be found in this github <a href="https://github.com/eddychu/simple-react">repository</a>.</p>
+<h2 id="reactcreateelement">React.createElement</h2>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createElement</span> <span class="hljs-params">(type,props, <span class="hljs-rest_arg">...children</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> {
+        type,
+        props: {
+            ...props,
+            children: children.map(item =&gt; 
+                <span class="hljs-keyword">typeof</span> item === <span class="hljs-string">&quot;object&quot;</span> ? item : createTextNode(item)   
+            )
+        }
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createTextNode</span> <span class="hljs-params">(value)</span> </span>{
+    <span class="hljs-keyword">return</span> {
+        type: <span class="hljs-string">&quot;TEXT&quot;</span>,
+        props: {
+            nodeValue: value,
+            children: []
+        }
+    }
+}
+</code></pre>
+<p>when building react apps, we don&#39;t use createElement function itself. Instead we describe UI component by using a language called &quot;JSX&quot;. But under the hood the JSX transpiler would call createElement function, which returns the React element object exactly like the code above.</p>
+<h3 id="reactdomrender">ReactDOM.render</h3>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createDom</span>(<span class="hljs-params">element</span>) =&gt; </span>{
+    <span class="hljs-keyword">const</span> {<span class="hljs-keyword">type</span>, props} = element;
+    <span class="hljs-keyword">const</span> {children} = props;
+    <span class="hljs-keyword">const</span> isDomElement = <span class="hljs-keyword">typeof</span> <span class="hljs-keyword">type</span> === <span class="hljs-string">&quot;string&quot;</span>;
+    <span class="hljs-keyword">let</span> dom;
+    <span class="hljs-keyword">if</span>(isDomElement) {
+        <span class="hljs-keyword">const</span> isTextElement = <span class="hljs-keyword">type</span> === <span class="hljs-string">&quot;TEXT&quot;</span>;
+        dom = isTextElement
+            ? <span class="hljs-built_in">document</span>.createTextNode(props.nodeValue)
+            : <span class="hljs-built_in">document</span>.createElement(<span class="hljs-keyword">type</span>);
+        <span class="hljs-built_in">Object</span>.keys(props)
+            .filter(isEvent)
+            .forEach(<span class="hljs-function"><span class="hljs-params">name</span> =&gt;</span> {
+                <span class="hljs-keyword">const</span> eventType = name.toLowerCase().substring(<span class="hljs-number">2</span>);
+                dom.addEventListener(eventType, props[name]);
+            })
+        children.map(<span class="hljs-function"><span class="hljs-params">child</span> =&gt;</span> dom.appendChild(createDom(child)))
+        <span class="hljs-keyword">return</span> dom;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">let</span> element = <span class="hljs-keyword">type</span>(props);
+        <span class="hljs-keyword">return</span> createDom(element)
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">element, container</span>) =&gt; </span>{
+    <span class="hljs-keyword">let</span> dom = createDom(element);
+    container.appendChild(dom);
+}
+</code></pre>
+<p>with this render function implemented. we can manage to create a basic static hello world component and render it in the document. (you need babel to transpile jsx syntax, to simplicify stuff. you can use parcel bundler which do the transpilation automatically.)</p>
+<pre><code><span class="hljs-keyword">const</span> App = <span class="hljs-function">() =&gt;</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>)
+</code></pre>
+<h3 id="reactusestate">React.useState</h3>
+<p>A static webpage with nothing changes wouldn&#39;t be exciting. We need to enable state to make the component dynamic.</p>
+<pre><code>    let <span class="hljs-literal">all</span>States = [];
+    let currentStateIndex = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">const</span> useState = (initialValue) =&gt; {
+        if(currentStateIndex === <span class="hljs-literal">all</span>States.length) {
+            <span class="hljs-keyword">const</span> <span class="hljs-keyword">state</span> = {
+                value: initialValue,
+                <span class="hljs-built_in">set</span>State(newValue) {
+                    <span class="hljs-keyword">state</span>.value = newValue;
+                    currentStateIndex = <span class="hljs-number">0</span>;
+                }
+            }
+            <span class="hljs-literal">all</span>States.push(<span class="hljs-keyword">state</span>);
+        }
+        <span class="hljs-keyword">const</span> currentState = <span class="hljs-literal">all</span>States[currentStateIndex];
+        currentStateIndex += <span class="hljs-number">1</span>;
+        return [currentState.value, currentState.<span class="hljs-built_in">set</span>State]
+    }
+</code></pre>
+<p>Now we are able to create a simple counter component to count how many times have we clicked it.</p>
+<pre><code>    <span class="hljs-keyword">const</span> Counter = () =&gt; {
+    <span class="hljs-keyword">const</span> [<span class="hljs-keyword">state</span>, <span class="hljs-built_in">set</span>State] = React.useState(<span class="hljs-number">0</span>);
+    <span class="hljs-keyword">const</span> handleClick = (e) =&gt; {
+        <span class="hljs-built_in">set</span>State(<span class="hljs-keyword">state</span> + <span class="hljs-number">1</span>);
+    }
+    return <span class="hljs-variable">&lt;h1 onClick={handleClick}&gt;</span>{<span class="hljs-keyword">state</span>}&lt;/h1&gt;
+}
+</code></pre>
+<p>That&#39;s all we need to implement a simplified version of React.</p>
+</body></head>
