@@ -10,7 +10,7 @@ const Index = ({allPosts}) => {
         <hr />
         <ul>
         {
-            allPosts.map((post) => <li key={post.path}><a href={post.path}><h3>{post.title}</h3></a></li>)
+            allPosts.map((post) => <li key={post.path}><a href={"posts/" + post.path}><h3>{post.title}</h3></a></li>)
         }
         </ul>
     </div>)
