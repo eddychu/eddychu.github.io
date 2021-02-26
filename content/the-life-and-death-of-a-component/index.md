@@ -3,13 +3,16 @@ title: The life and death of a React Class Component
 date: 2020-10-29T05:58:11.637Z
 ---
 
+
 If you were confused by React (Class) Component's life cycle methods, I hope this article will help you understand it better.
 
-There are three phases in the whole lifecyle of a react component, namely mounting, updating and unmounting. In a class component, during each phase there are a few functions will be called by React runtime one by one.
+With a component approach, React turns frontend development to a simple question: render view based on current state. To acheive this, React provides us with a few methods to facilitate state and view management. These methods are the socalled life cycle method. They will be called by React runtime one after the other during the life cyle (mounting, updating, unmounting) of a React ClassComponent. 
 
-try it on [codesandbox](https://codesandbox.io/s/component-lifecycle-j0jtn)
+I will try to explain this with a few examples. you can also try it on [codesandbox](https://codesandbox.io/s/component-lifecycle-j0jtn)
 
 ## Mounting : The birth of a React component
+
+Mounting is the first phase of the life cycle. It starts with the constructor of a component gets called. 
 
 ```javascript
 class Message extends Component {
@@ -36,9 +39,11 @@ class Message extends Component {
 }
 ```
 
-when react start to render our Message component, the constructor is the first method to be called. Then a static function getDerivedStateFromProps is called to give us a chance to change the state based on initial props. after the render function, the dom element is finally added to the dom, then react calls componentDidMount() function, after this step the dom element is finally accessible.
+In this example, the Message class constructor is the first method to be called. Then a static function getDerivedStateFromProps is called automatically to give us a chance to change the state based on initial props. With the execution of the render() function, the dom element gets added to the dom. Then React calls componentDidMount() function. After this, the real dom element created by Message is finally accessible.
 
 ## Updating: A change of state
+
+Updating phase starts when the state changes, through this.setState() function. 
 
 ```javascript
 class Message extends Component {
@@ -49,12 +54,12 @@ class Message extends Component {
   }
 
   shouldComponentUpdate() {
-    console.log("4: shouldComponentUpdate");
+    console.log("5: shouldComponentUpdate");
     return true;
   }
 
   render() {
-    console.log("5: render");
+    console.log("6: render");
     return (
       <div onClick={this.handleClick} id="message">
         {this.state.message}
@@ -63,14 +68,16 @@ class Message extends Component {
   }
 
   componentDidUpdate() {
-    console.log("6: componentDidUpdate");
+    console.log("7: componentDidUpdate");
   }
 }
 ```
 
-After we click the component, handleClick function changes the message state. shouldComponentUpdate is called the next step. If this function returns false, nothing would be updated. If it returns true, render function will be called with the updated state.
+After we click the component, handleClick function changes the message state. shouldComponentUpdate is called the next step. Notice that if this function returns false, the subsequent render would be canceled. Only when it returns true, render function gets called with the updated state. 
 
 ## Unmounting: Time to say goodbye
+
+In unmounting phase, React component is destroyed and and removed from the dom tree. 
 
 ```javascript
 class Message extends Component {
@@ -93,4 +100,7 @@ const App = () => {
 render(<App />, document.getElementById("root"));
 ```
 
-when show is toggled off, the last life cycle method componentWillUnmount will be called. <Message /> component then will be removed from the DOM tree.
+in the code above, when show is set to be false, the last life cycle method componentWillUnmount will be called. <Message /> component then will be removed from the DOM tree.
+
+As you can see, with a few life cycle methods, we have full control of a class component from birth to death. But if you were to start a new react project today, functional component is a much better choice. Because with in a functional component, these life cycle methods are replaced with a few even simpler "hooks". I guess that will be our next topic. 
+
