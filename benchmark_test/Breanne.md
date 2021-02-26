@@ -1,3 +1,0 @@
-Doloremque ut quia perferendis. Totam accusantium repellendus. Quia placeat iste repellendus ullam ducimus voluptatem. Rerum repellat omnis fugiat possimus quia libero. Quidem quo officia eum ratione et dolorem aperiam vel. Soluta tempora omnis.
- Veniam deserunt velit eveniet enim laboriosam soluta. Ratione officia eos voluptatem aliquid consequatur fugiat magnam delectus. Aut consectetur aliquam ducimus consectetur. Voluptates sed id perspiciatis.
- Vitae in sint enim eum. Incidunt eveniet ratione deserunt voluptatem. Rerum quas eum praesentium iure optio beatae velit fuga dolorum. Debitis error assumenda.

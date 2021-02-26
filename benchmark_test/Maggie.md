@@ -1,3 +1,0 @@
-Similique ipsum exercitationem. Et et enim minima quia in voluptatem aspernatur error. Ab mollitia est assumenda sit quia perspiciatis labore. Sunt qui blanditiis.
- Et reprehenderit magni maxime. Libero aut voluptatibus impedit provident dolores incidunt. Quaerat itaque maxime ex consequatur. Aut sed et quas mollitia aut incidunt repudiandae minus velit. Amet voluptatum molestias culpa quis aliquam.
- Possimus et harum accusantium dicta voluptates exercitationem temporibus nostrum omnis. Assumenda et animi eveniet consequatur doloremque. Mollitia veritatis temporibus in consequuntur libero non voluptatum harum ad. Consequatur occaecati accusantium nam modi nulla velit. Ad amet alias qui sed. Cupiditate quas magni mollitia ea blanditiis sit.

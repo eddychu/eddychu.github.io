@@ -1,3 +1,0 @@
-Eaque voluptates quas. Rerum animi inventore. Ex neque sint hic et quae. Sequi odio et aut perferendis maiores voluptatum. Delectus est ducimus est tenetur facere perferendis.
- Officiis optio est expedita. Fugit sed sunt et quo fuga qui. Ab perspiciatis fugiat consequuntur soluta aspernatur perferendis. Qui maiores eos sunt voluptas molestiae. Aut ex quod libero eveniet odio tempore ut.
- Assumenda earum et minus impedit voluptates. Rerum enim sit qui qui voluptatem sapiente. Architecto ut sit qui et nesciunt natus beatae. Ut magni vero nihil facere repudiandae perspiciatis amet placeat ut.

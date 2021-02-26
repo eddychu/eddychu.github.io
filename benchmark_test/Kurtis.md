@@ -1,3 +1,0 @@
-Omnis eos saepe placeat eaque deleniti ad excepturi. Nemo et sit in esse aut magnam quibusdam officiis. Eum placeat accusamus delectus et quidem architecto error voluptas similique. Dolorem exercitationem dolorem neque dolor ea. Nulla qui numquam quasi minus blanditiis dolores.
- Repudiandae qui minima enim repudiandae officiis hic esse quis id. Nisi veniam eos adipisci veniam autem non cum necessitatibus. Rerum sed minima. Mollitia aperiam consequatur minus.
- Minus quam nihil. Architecto blanditiis quis consequuntur. Nihil asperiores assumenda voluptatum. Atque consequatur commodi et quos recusandae cumque autem sed. Quidem enim libero nihil explicabo dignissimos eum quia aut molestiae.

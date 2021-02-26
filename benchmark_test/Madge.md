@@ -1,3 +1,0 @@
-In perferendis illo sequi et labore voluptatem commodi. Velit quaerat omnis odio cupiditate neque corporis. Facilis itaque accusamus doloremque amet facere.
- Officiis sed odit aliquid voluptatem accusantium cumque et voluptatem. Nemo rerum repellendus earum. Et aut voluptatem ex ut minima veritatis corporis. Ratione placeat et incidunt consequuntur excepturi nulla.
- Hic iure quaerat. Placeat placeat sint recusandae voluptatum autem minima reprehenderit aut. Sint ratione minus id. Rerum et non doloremque. Quasi explicabo est magnam amet dolorem.

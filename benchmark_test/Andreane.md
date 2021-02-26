@@ -1,3 +1,0 @@
-Neque qui quibusdam. Quod velit voluptas dolor aliquam sed labore. Dolor soluta neque dicta vitae est quasi. A qui minima ut aliquid quis inventore amet. Ut veritatis voluptates est et iusto nostrum unde maxime enim.
- Provident voluptate blanditiis illo illo aut et harum officiis dolorem. Ut voluptatem quos facere eligendi quasi quam quasi et. Voluptas doloremque inventore aut est possimus tenetur voluptatem. Excepturi esse repellendus saepe. In dignissimos voluptas error.
- Necessitatibus qui quia doloribus accusantium voluptatem est recusandae. Quam vel sed velit deserunt at recusandae est. Dicta ipsa esse sunt error vero neque maxime sunt. Assumenda explicabo ipsa quibusdam cumque impedit ex. Ut ducimus sunt adipisci ut voluptas porro.

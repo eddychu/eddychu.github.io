@@ -1,3 +1,0 @@
-Omnis ut aut dolorem. Dolorem natus dolorum et voluptatibus dolores. Illo magni iste maiores numquam odio natus eos blanditiis.
- Itaque occaecati nulla vel voluptas voluptatem error soluta veritatis ea. Ipsum consequatur minima beatae quidem aliquam perspiciatis beatae. Suscipit et voluptatum. Accusantium est eaque ducimus repudiandae.
- Optio occaecati voluptas qui aspernatur harum sed necessitatibus. Eaque et beatae possimus quibusdam facere quia. Laboriosam voluptatem sunt dolor consectetur asperiores sequi est voluptates.

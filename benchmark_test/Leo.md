@@ -1,3 +1,0 @@
-Accusantium qui et est id vitae ex. Sed voluptatum sit. Expedita nulla maiores et sed ut et.
- Asperiores aut dolorem. Aut saepe blanditiis eius. Consequatur qui laudantium odit reprehenderit dicta ut repellendus rerum.
- Ex fugit est in alias qui aperiam facere omnis. Voluptatem dignissimos voluptatibus eaque. Itaque sint velit ad quae officiis et fugiat accusantium. Libero dolorem quas autem dolorum dolorum nulla quod numquam ipsa.

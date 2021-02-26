@@ -1,3 +1,0 @@
-Pariatur est veniam in omnis rerum quae numquam vel nisi. Voluptatibus aperiam dolores nam eos illo provident ea enim. Minus magnam quasi explicabo veritatis assumenda perspiciatis impedit quod. Qui sint quia perferendis cum. Veniam autem provident. Odio veritatis officiis numquam.
- Tempore sed et numquam qui aperiam. Nam sequi minima atque rerum. Expedita nesciunt aperiam.
- Enim quis delectus commodi. Voluptas est odio aut eius soluta aspernatur amet rerum. Dolorem culpa ut esse. Qui quia tempora placeat reiciendis ex optio cum dolor. Esse et accusantium et doloremque asperiores officia.

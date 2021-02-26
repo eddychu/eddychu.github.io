@@ -1,3 +1,0 @@
-Laboriosam animi laborum temporibus. Ducimus quos alias assumenda non quia quo sit eaque. Necessitatibus voluptas odit earum repellendus.
- Possimus molestiae perspiciatis quisquam. Quibusdam facilis reprehenderit. Doloremque qui vel quas quaerat reiciendis. Sapiente voluptatum quae consequuntur ullam iure ut sit est. Architecto eos ex ut quas qui dolor qui ea.
- Sequi et natus occaecati autem error qui. Totam eaque consequatur amet consequatur vel. Sequi delectus et animi sunt aut dolores. Suscipit qui in dolorum tenetur exercitationem id.

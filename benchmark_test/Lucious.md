@@ -1,3 +1,0 @@
-Qui quia aspernatur incidunt rerum aspernatur nostrum et voluptas assumenda. Inventore qui aut dignissimos. Qui provident dolorem quos animi eum in soluta aut. Optio quod veritatis. Facere veniam dolores fugiat autem eum non iure.
- Eum ut iure consequatur officia qui ea aut reprehenderit. Eaque harum nihil at deserunt rerum sapiente repellat eius. Porro soluta rem quia in odit non voluptatum dolor. Aspernatur expedita in neque esse est.
- Eos perferendis corporis et unde assumenda illum asperiores. Debitis molestiae labore. Sed aut laboriosam sunt.

@@ -1,3 +1,0 @@
-Consequatur quam aut ipsa minus quae alias distinctio. Dolor eum qui iure accusantium odio error minima rerum et. Cumque iure ex molestiae nemo eum voluptas perspiciatis.
- Quia nesciunt est minima placeat eum sunt et. Dignissimos mollitia incidunt facilis dignissimos sit qui quod. Voluptatem occaecati consequatur.
- Ad ea suscipit quas ipsa vel voluptatem ipsam. Mollitia blanditiis et id est. Impedit voluptatum autem est odio sed qui. Repellendus vel ipsa dolorum aperiam asperiores velit eum. Iure qui et ipsam animi totam quam delectus non. Minus quia aut corporis illo voluptas eum labore et aut.

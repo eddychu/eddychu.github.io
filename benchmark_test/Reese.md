@@ -1,3 +1,0 @@
-Voluptatem quibusdam enim corrupti sequi aperiam vero ut accusamus. Assumenda et quibusdam odio autem provident omnis. Voluptatem inventore sint veniam magni ad voluptatem et. Dolorem unde quis. Et dolores minima.
- Aut officia fugit nisi eveniet ex reprehenderit ut. Aut non ut saepe est quasi quia rerum. Dolores consequatur placeat voluptatum id officia vel. Earum voluptatibus quo qui.
- Qui saepe voluptatem corporis officia commodi. Cum veniam dolores sit animi delectus eos aut. Est optio et. Soluta illum qui alias aut cumque facilis voluptas minima magnam.

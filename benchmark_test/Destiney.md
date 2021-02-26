@@ -1,3 +1,0 @@
-Commodi amet saepe debitis quo aut a aliquam rerum aut. Qui corporis consequatur voluptatibus. Omnis qui omnis veritatis itaque veniam corporis et eligendi quam.
- Aspernatur officia beatae minima odit atque ratione. Sit repellendus ullam neque ea sit blanditiis voluptate sapiente ad. Quia blanditiis sed maiores mollitia id est illum.
- Excepturi ullam debitis voluptates rerum est distinctio facere dolores. Accusantium nesciunt eligendi. Quisquam atque pariatur.

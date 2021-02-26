@@ -1,3 +1,0 @@
-Similique exercitationem ipsam deleniti. Voluptate non tempora sint fugiat vel quod accusamus sapiente laudantium. Neque nihil et ducimus minima eum in. Suscipit et beatae nulla rerum et quis. Illo rerum et fuga ut delectus odio ipsa.
- Omnis ex est nemo. Distinctio quae quidem vitae ipsa. Dolorem alias eum tenetur nam nam reiciendis fugit magni laboriosam. Omnis sit alias quia. Nisi tempore officia rerum voluptatem sequi sit.
- Atque veniam ullam eos quia velit. Doloremque accusamus dicta magnam consequatur sed dignissimos quia. A consequatur quia.

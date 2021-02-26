@@ -1,3 +1,0 @@
-Ratione doloremque maxime qui atque ratione at repellat. Animi possimus harum et. Rem perspiciatis ut deserunt sint eum consectetur corrupti dolores.
- Et incidunt dignissimos est in libero nam sint. Harum mollitia et rerum. Veniam ratione sit est reiciendis tempora minima.
- Pariatur excepturi id est labore. Eius illum eos aspernatur vitae culpa magni voluptatem aut vero. Laborum qui nihil eaque. Incidunt et soluta molestias reprehenderit assumenda optio.

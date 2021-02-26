@@ -1,3 +1,0 @@
-Doloribus voluptatem quasi. Dolorem eum omnis accusantium eum beatae. Laudantium explicabo illo sequi fugiat qui ipsam ut accusantium fugiat.
- Alias ut dolorem et commodi. Perspiciatis corrupti cum in minus. Vero et modi at optio et aut qui. Quos assumenda vel sit reiciendis.
- Id illo perferendis commodi doloribus accusantium laborum eveniet. Quibusdam similique quod et possimus culpa nisi fuga quia deserunt. Odit corporis corrupti possimus tenetur voluptatem ipsa qui eligendi.

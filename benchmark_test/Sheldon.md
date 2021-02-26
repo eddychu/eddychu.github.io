@@ -1,3 +1,0 @@
-Veritatis facilis et et laborum. Ullam exercitationem et dignissimos et vero velit eum. Ratione necessitatibus culpa. Accusantium molestias impedit quia minima quis cumque nesciunt. Voluptatem aut qui ipsum sit debitis illum.
- Delectus ipsum perspiciatis ut consequatur natus impedit numquam. Aspernatur quasi deleniti temporibus rerum expedita exercitationem quo perferendis. Mollitia asperiores hic voluptatem excepturi.
- Sapiente modi corrupti. Quo mollitia repudiandae earum. Ut sed et repellendus et quasi voluptates aut.

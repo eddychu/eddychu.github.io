@@ -1,3 +1,0 @@
-Aliquid consectetur quia officia. Dolorem voluptas vel numquam dolor veritatis modi perspiciatis a voluptatem. Minus dignissimos dolorem delectus vitae eum. Vel necessitatibus neque quos commodi odit voluptatem impedit est. Hic ratione accusantium.
- Aut officia doloribus et. Reiciendis praesentium ut quis sunt et ducimus sed id voluptatem. Doloremque est nemo consequatur voluptas quis. Aliquid voluptatum quia neque voluptatem sint architecto praesentium neque.
- Facilis eum odit consequatur harum. Vitae beatae et fuga doloremque laudantium. Aspernatur repudiandae consectetur vel quos harum iusto minus ut sit.

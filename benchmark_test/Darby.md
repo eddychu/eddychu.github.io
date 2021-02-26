@@ -1,3 +1,0 @@
-Temporibus cupiditate provident reiciendis aliquid voluptas totam amet consequatur. Optio ea consequuntur et. Quae nostrum ducimus repudiandae aut dignissimos atque.
- Quidem quia voluptatem totam. Occaecati nemo ratione optio. Consectetur beatae ipsa. Et ducimus sit aut quia.
- Occaecati vel dolores ipsam placeat est aperiam. Debitis rerum et totam corrupti. Deserunt illum vel sapiente pariatur voluptate est sed.

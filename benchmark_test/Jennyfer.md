@@ -1,3 +1,0 @@
-Et assumenda consequatur atque maiores dolor quibusdam tempore nulla ratione. Consectetur rerum fugiat voluptas sint ea architecto neque. Quia earum consequatur rerum hic itaque omnis beatae rerum. Est voluptates maxime inventore aut earum vitae quo molestiae nihil.
- Est sapiente vel modi et optio. Iure ex incidunt. Vitae doloribus tempore dolorum repellendus mollitia iste fugit vitae. Necessitatibus voluptatem nostrum libero illo omnis tempora. Quam id deserunt consequatur perspiciatis.
- Laborum hic eum nihil tenetur ea. Accusamus ut expedita. Eum dicta eaque minima consequatur.

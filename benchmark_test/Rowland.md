@@ -1,3 +1,0 @@
-Placeat sequi deleniti aliquid voluptas assumenda et labore ut. Nesciunt sapiente id facilis. Ipsam nostrum repellat iste consectetur qui rerum ratione.
- Iusto similique adipisci vitae. Rerum repudiandae possimus dolorum. Et quia voluptatum ducimus est vero nesciunt laboriosam consequatur illum.
- Quo cupiditate modi culpa labore amet. Quod architecto dolorem enim eius dolorum molestias iure doloribus quos. Vero laborum ipsam eos recusandae molestiae ea rerum. Adipisci cum delectus.

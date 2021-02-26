@@ -1,3 +1,0 @@
-Vitae ducimus in similique. Nesciunt voluptatum inventore aut ratione. Sint pariatur veniam. Ut quos vero perspiciatis. Et cupiditate laborum voluptatem non blanditiis qui quia ipsa. Quas nisi aperiam quis ipsam.
- Enim reprehenderit amet. Enim consectetur suscipit ad. Voluptatum deserunt ut ex reprehenderit deleniti sit debitis numquam.
- Incidunt velit saepe aspernatur minima reprehenderit minima. Voluptatem distinctio iure eaque cupiditate rerum omnis reiciendis sed. Voluptas suscipit beatae deleniti placeat dolorum sit aut quidem ut.

@@ -1,3 +1,0 @@
-Fugit aliquid corporis. In iusto qui excepturi officiis. Dolore natus nulla animi. Animi omnis aut vero. Quisquam aperiam facilis modi accusamus eius. Laboriosam sed ut quibusdam quo et.
- Quia et tempora sunt quo. Aliquam ipsam reiciendis aut. Perspiciatis doloribus fuga. Qui odit ut hic.
- Aut occaecati ut. Est fugiat fuga velit sed. A sint est iure sed animi odit qui recusandae. Error libero nam necessitatibus quia dolore autem officiis ex. Doloribus consequatur qui et dolor. Nobis eum ea et itaque ut pariatur.

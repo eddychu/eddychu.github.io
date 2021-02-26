@@ -1,3 +1,0 @@
-Quod deleniti sapiente. Velit ut dolore eveniet vel laboriosam. Similique accusantium vero vel vero exercitationem aliquid. Veritatis dolores neque numquam. Et sed qui aspernatur et architecto exercitationem. Qui maxime unde beatae pariatur eos.
- Aliquid vitae sint eum. Ducimus nihil ut aut. Voluptate earum ratione enim illo et consequuntur. Et dignissimos consequuntur beatae excepturi. Accusamus fuga voluptate similique voluptates.
- Omnis amet aut iusto distinctio quo libero. Aut rerum velit occaecati sit provident. Ipsam qui nesciunt libero similique tenetur temporibus.

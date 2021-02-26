@@ -1,3 +1,0 @@
-Magnam delectus repudiandae aut ut deleniti est amet. Soluta cum nihil alias et quisquam. Labore eligendi laudantium praesentium. Facilis inventore officiis atque. Quam rerum et nihil quis laborum esse illum eaque.
- Impedit labore neque. Vel quod doloremque natus et expedita et aut. Recusandae soluta quo fugiat nam. Eos et alias nostrum.
- Omnis quia quo consequatur culpa dolorum qui totam voluptatem architecto. Distinctio voluptas et cumque accusantium est. Et odit ratione odit saepe beatae ex adipisci sit.
