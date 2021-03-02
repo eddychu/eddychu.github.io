@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>Event Propagation in the Browser | Connecting Dots</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://eddychu.github.io/css/index.css">
+<link rel="canonical" href="http://eddychu.github.io/posts/event-propagation-in-the-browser/">
+<link rel="alternate" type="application/rss+xml" href="" title="Connecting Dots">
+
+<header>
+  
+    <a href="http://eddychu.github.io/" class="title">Connecting Dots</a>
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>Event Propagation in the Browser</h1>
+    <time datetime="2020-11-02T17:37:47&#43;08:00">November 02, 2020</time>
+  </header>
+  <p>JavaScript programs use an asynchronous event-driven programming model. When something happens on the webpage, the browser will generate a event for it, a special function called event handler then gets called. If there are more than one event handler binded, they will be exectued in the same order as they were added.</p>
+<p>To understand how events are handled in javascript (client side), we have to understand the three phase of event propagation.</p>
+<h2 id="first-capturing-phase">First: Capturing phase</h2>
+<p>Before a event on a target object is invoked, the event is in the so called capturing phase. Recall that addEventListener() takes an optional third argument. If that argument is true ,or {capture:true}, then the event handler is registered as a capturing event handler
+for invocation during this first phase of event propagation.</p>
+<p>During this phase, the capturing handlers of the Window object are invoked first, then the capturing handler of the Document object, then of the body object, and so on down the DOM tree until the capturing event handlers of the parent of the event target.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box&#34;</span>&gt;
+        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span>&gt;Button&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;other&#34;</span>&gt;
+
+    &lt;/<span style="color:#f92672">div</span>&gt;
+
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;button&#34;</span>);
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">box</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;box&#34;</span>);
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">other</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;other&#34;</span>);
+        <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, () =&gt; {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;hello from button&#34;</span>);
+        })
+        <span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, () =&gt; {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;hello from box&#34;</span>);
+        })
+        <span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, (<span style="color:#a6e22e">e</span>) =&gt; {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;hello from box, capture&#34;</span>);
+        }, {<span style="color:#a6e22e">capture</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>})
+
+    &lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>because the capturing phase happens before the target event handler gets called, the last capture event handler will be called first. and then the button object&rsquo;s event handler gets called before it bubbles up to the parent object again.</p>
+<p>if we add event.stopPropagation() in the capture event handler, then the button click event will be canceled, hence the first two event listeners will be pointless.</p>
+<h2 id="invocation-of-the-target-object">Invocation of the target object</h2>
+<p>After the capturing phase ends, the event handlers of the event target object are invocated. Most of the time, as programmer we only care about what happens in this phase.</p>
+<p>One thing to note is that handlers are invoked with the target as their this value, even when registered using addEventListener() .</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>);
+        <span style="color:#75715e">// this is the button object
+</span><span style="color:#75715e"></span>    }
+
+    <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#66d9ef">function</span>() {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>);
+        <span style="color:#75715e">// same, this is the button object
+</span><span style="color:#75715e"></span>    })
+    
+    <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, () =&gt; {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>); 
+        <span style="color:#75715e">// alert, this will be the environment where button is defined. typically window object.
+</span><span style="color:#75715e"></span>    })
+</code></pre></div><h2 id="bubbling-phase">Bubbling phase</h2>
+<p>After the event handlers registered on the target element are invoked, most events &ldquo;bubble&rdquo; up the DOM tree.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box&#34;</span>&gt;
+        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span>&gt;Button&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;other&#34;</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;button&#34;</span>);
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">box</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;box&#34;</span>);
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">other</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;other&#34;</span>);
+        <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, () =&gt; {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;hello from button&#34;</span>);
+        })
+        <span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, () =&gt; {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;hello from box&#34;</span>);
+        })
+        <span style="color:#a6e22e">other</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, () =&gt; {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;i won&#39;t be called ever&#34;</span>);
+        })
+    &lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>when different dom elements need event handlers, you can utilise this default bubbling behavior, by registering a single handler on a common ancestor element and handle events there. you can use event.target property to check which child element fired the specific event.</p>
+<p>Do note that a few event types don&rsquo;t follow this bubbling rule, such as &ldquo;focus&rdquo;, &ldquo;blur&rdquo;, &ldquo;scroll&rdquo;.</p>
+<p>An event target may have more than one event handler registered for a particular
+type of event. When an event of that type occurs, the browser invokes all of the han‐
+dlers in the order in which they were registered.</p>
+
+</article>
+
+
+
+</html>

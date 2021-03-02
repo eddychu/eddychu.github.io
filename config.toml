@@ -1,0 +1,8 @@
+baseURL = "http://eddychu.github.io/"
+languageCode = "en-us"
+title = "Connecting Dots"
+
+theme = "contrast"
+
+publishdir = "docs"
+

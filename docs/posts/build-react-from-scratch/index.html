@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>Build React From Scratch | Connecting Dots</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://eddychu.github.io/css/index.css">
+<link rel="canonical" href="http://eddychu.github.io/posts/build-react-from-scratch/">
+<link rel="alternate" type="application/rss+xml" href="" title="Connecting Dots">
+
+<header>
+  
+    <a href="http://eddychu.github.io/" class="title">Connecting Dots</a>
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>Build React From Scratch</h1>
+    <time datetime="2021-03-02T17:36:25&#43;08:00">March 02, 2021</time>
+  </header>
+  <p>I&rsquo;m building a toy react library to learn more about how it works under the hood. All the code here can be found in this github <a href="https://github.com/eddychu/simple-react">repository</a>.</p>
+<h2 id="reactcreateelement">React.createElement</h2>
+<pre><code>function createElement (type,props, ...children) {
+    return {
+        type,
+        props: {
+            ...props,
+            children: children.map(item =&gt; 
+                typeof item === &quot;object&quot; ? item : createTextNode(item)   
+            )
+        }
+    }
+}
+
+function createTextNode (value) {
+    return {
+        type: &quot;TEXT&quot;,
+        props: {
+            nodeValue: value,
+            children: []
+        }
+    }
+}
+
+</code></pre><p>when building react apps, we don&rsquo;t use createElement function itself. Instead we describe UI component by using a language called &ldquo;JSX&rdquo;. But under the hood the JSX transpiler would call createElement function, which returns the React element object exactly like the code above.</p>
+<h3 id="reactdomrender">ReactDOM.render</h3>
+<pre><code>function createDom(element) =&gt; {
+    const {type, props} = element;
+    const {children} = props;
+    const isDomElement = typeof type === &quot;string&quot;;
+    let dom;
+    if(isDomElement) {
+        const isTextElement = type === &quot;TEXT&quot;;
+        dom = isTextElement
+            ? document.createTextNode(props.nodeValue)
+            : document.createElement(type);
+        Object.keys(props)
+            .filter(isEvent)
+            .forEach(name =&gt; {
+                const eventType = name.toLowerCase().substring(2);
+                dom.addEventListener(eventType, props[name]);
+            })
+        children.map(child =&gt; dom.appendChild(createDom(child)))
+        return dom;
+    } else {
+        let element = type(props);
+        return createDom(element)
+    }
+}
+
+function render(element, container) =&gt; {
+    let dom = createDom(element);
+    container.appendChild(dom);
+}
+</code></pre><p>with this render function implemented. we can manage to create a basic static hello world component and render it in the document. (you need babel to transpile jsx syntax, to simplicify stuff. you can use parcel bundler which do the transpilation automatically.)</p>
+<pre><code>const App = () =&gt; (&lt;div&gt;Hello World&lt;/div&gt;)
+
+</code></pre><h3 id="reactusestate">React.useState</h3>
+<p>A static webpage with nothing changes wouldn&rsquo;t be exciting. We need to enable state to make the component dynamic.</p>
+<pre><code>    let allStates = [];
+    let currentStateIndex = 0;
+    const useState = (initialValue) =&gt; {
+        if(currentStateIndex === allStates.length) {
+            const state = {
+                value: initialValue,
+                setState(newValue) {
+                    state.value = newValue;
+                    currentStateIndex = 0;
+                }
+            }
+            allStates.push(state);
+        }
+        const currentState = allStates[currentStateIndex];
+        currentStateIndex += 1;
+        return [currentState.value, currentState.setState]
+    }
+</code></pre><p>Now we are able to create a simple counter component to count how many times have we clicked it.</p>
+<pre><code>    const Counter = () =&gt; {
+    const [state, setState] = React.useState(0);
+    const handleClick = (e) =&gt; {
+        setState(state + 1);
+    }
+    return &lt;h1 onClick={handleClick}&gt;{state}&lt;/h1&gt;
+}
+</code></pre><p>That&rsquo;s all we need to implement a simplified version of React.</p>
+
+</article>
+
+
+
+</html>
