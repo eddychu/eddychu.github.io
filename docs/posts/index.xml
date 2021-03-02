@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Connecting Dots</title>
-    <link>http://eddychu.github.io/posts/</link>
+    <link>https://eddychu.github.io/posts/</link>
     <description>Recent content in Posts on Connecting Dots</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Mar 2021 17:36:25 +0800</lastBuildDate><atom:link href="http://eddychu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Mar 2021 17:36:25 +0800</lastBuildDate><atom:link href="https://eddychu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Build React From Scratch</title>
-      <link>http://eddychu.github.io/posts/build-react-from-scratch/</link>
+      <link>https://eddychu.github.io/posts/build-react-from-scratch/</link>
       <pubDate>Tue, 02 Mar 2021 17:36:25 +0800</pubDate>
       
-      <guid>http://eddychu.github.io/posts/build-react-from-scratch/</guid>
+      <guid>https://eddychu.github.io/posts/build-react-from-scratch/</guid>
       <description>I&amp;rsquo;m building a toy react library to learn more about how it works under the hood. All the code here can be found in this github repository.
 React.createElement function createElement (type,props, ...children) { return { type, props: { ...props, children: children.map(item =&amp;gt; typeof item === &amp;quot;object&amp;quot; ? item : createTextNode(item) ) } } } function createTextNode (value) { return { type: &amp;quot;TEXT&amp;quot;, props: { nodeValue: value, children: [] } } } when building react apps, we don&amp;rsquo;t use createElement function itself.</description>
     </item>
     
     <item>
       <title>Event Propagation in the Browser</title>
-      <link>http://eddychu.github.io/posts/event-propagation-in-the-browser/</link>
+      <link>https://eddychu.github.io/posts/event-propagation-in-the-browser/</link>
       <pubDate>Mon, 02 Nov 2020 17:37:47 +0800</pubDate>
       
-      <guid>http://eddychu.github.io/posts/event-propagation-in-the-browser/</guid>
+      <guid>https://eddychu.github.io/posts/event-propagation-in-the-browser/</guid>
       <description>JavaScript programs use an asynchronous event-driven programming model. When something happens on the webpage, the browser will generate a event for it, a special function called event handler then gets called. If there are more than one event handler binded, they will be exectued in the same order as they were added.
 To understand how events are handled in javascript (client side), we have to understand the three phase of event propagation.</description>
     </item>
